@@ -1,0 +1,748 @@
+/*=====**Mahdi meydan miri**=====*/
+/*
+=================================================
+=================   Reset Css   =================
+=================================================
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px(best for search engine font size) */
+}
+*, *:after, *:before{
+    box-sizing: inherit;
+}
+/*
+=================================================
+=================   Font Family   ===============
+=================================================
+*/
+@font-face {
+    font-family: Roboto_Regular;
+    src: url(../assest/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: Archivo_Black;
+    src: url(../assest/fonts/Archivo/Archivo-Black.ttf) format("truetype");
+}
+/*
+=================================================
+===========   General specification   ===========
+=================================================
+*/
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.container{
+    width: 79%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+body{
+    line-height: 1.5;
+    font-family: Roboto_Regular;
+    background-color: #FAF4F2;
+    font-size: 1.6rem;
+}
+/*
+=================================================
+===================   Header   ==================
+=================================================
+*/
+.header{
+    background: linear-gradient(rgba(59, 55, 53, 0.5), rgba(59, 55, 53, 0.5)) ,url(../assest/images/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh;
+    border-bottom-left-radius: 100px; 
+    border-bottom-right-radius: 100px; 
+}
+/*
+=================================================
+================   Header(nav)   ================
+=================================================
+*/
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 5px;
+}
+.nav__logo-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__logo{
+    height: 50px;
+    margin-right: 25px;
+}
+.nav__left{
+    display: none;
+}
+.nav__left-item{
+    margin-left: 18px;
+}
+.nav__left-link{
+    color: #d2d2d2;
+    position: relative;
+    z-index: 1;
+}
+.nav__left-link:hover{
+    color: #fff;
+    transition: all 100ms ease-in;
+}
+.nav__left-link--line{
+    color: #fff;
+}
+.nav__left-link--line::before{
+    content: ' ';
+    border-radius: 10px;
+    width: 40px;
+    height: 2px;
+    background-color: #E76F51;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+.nav__right{
+    display: none;
+}
+.nav__right-link{
+
+}
+.nav__right-link:hover{
+    color: #fff;
+}
+.nav__right-link--border{
+    margin-left: 20px;
+    border: #fff solid 1px;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+.nav__right-link--border:hover{
+    background-color: #fff;
+    color: #3B3735;
+    transition: all 100ms ease-in;
+}
+.nav__mobile{
+    position: fixed;
+    background-color: #3B3735;
+    top: 0;
+    left: -220px;
+    bottom: 0;
+    width: 220px;
+    padding: 20px;
+    line-height: 3rem;
+    transition: all 750ms cubic-bezier(1, -0.44, 0.58, 1);
+    z-index: 2;
+}
+.nav__mobile--open{
+    left: 0;
+}
+.nav__mobile-sign{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+.nav__mobile-sign-up-in{
+    border: 1px solid #fff;
+    padding: 8px 12px;
+    border-radius: 18px;
+    transition: all 250ms ease-in-out;
+}
+.nav__mobile-sign-up-in:hover{
+    background-color: #fff;
+    color: #3B3735;
+}
+.nav__mobile-btn{
+    background-color: #fff;
+    padding: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.nav__mobile-btn-img{
+    width: 24px;
+}
+.nav__mobile-btn--open .nav__mobile-btn-img{
+    background-image: url(../assest/svg-icons/Group\ 319.svg);
+}
+.header__caption{
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+/*
+=================================================
+==============   Header(caption)   ==============
+=================================================
+*/
+.header__title{
+    word-spacing: 10px;
+    line-height: 1.25em;
+    font-family: Archivo_Black;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.header__text{
+    text-align: center;
+    font-size: 18px;
+    max-width: 340px;
+    margin: 0 auto 15px auto;
+}
+.btn{
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 40px;
+    background-color: #d5d5d5;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 15px #59595927;
+}
+.header__button{
+    background-color: #E76F51;
+}
+/*
+=================================================
+===============   for main page   ===============
+=================================================
+*/
+.main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*
+=================================================
+==================   Services   =================
+=================================================
+*/
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: -90px;
+}
+.service__box{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding-top: 30px;
+    box-shadow: 1px 1px 20px #d5d5d53a;
+    cursor: pointer;
+    flex: 2.4;
+    transition:all 600ms ease-in-out;
+}
+.service__box:hover{
+    flex: 3;
+}
+.service__box__img{
+    display: block;
+}
+.service__box__title{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-family: Archivo_Black;
+}
+.service__box__text{
+    font-size: 14px;
+    width: 240px;
+    height: 192px;
+}
+/*
+=================================================
+================   Destinition   ================
+=================================================
+*/
+.destinition__explore{
+    display: flex;
+    margin-top: 110px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.destination__text{
+    font-family: Archivo_Black;
+    font-size: 40px;
+    max-width: 40%;
+    text-align: center;
+    margin-top: 40px;
+    justify-content: center;
+    display: flex;
+}
+.destination__places{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+.place{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    height: 390px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px #d5d5d55f;
+}
+.place__img{
+    width: 85%;
+    margin-top: 20px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.place__heart{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-color: #ffffff;
+    padding: 7px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+.place__price-night{
+    background-color: #fff;
+    color: #E76F51;
+    padding: 10px 20px;
+    margin-top: -22px;
+    border-radius: 14px;
+}
+.place__title{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-family: Archivo_Black;
+    font-size: 16px;
+    cursor:default;
+}
+.place__text{
+    text-align: center;
+    font-size: 14px;
+    width: 85%;
+    margin-bottom: 20px;
+    cursor:default;
+}
+.place__button{
+    color: #8D8D8D;
+    background-color: #e8e8e8;
+}
+.place__button:hover{
+    background-color: #dddddd;
+    color: #8D8D8D;
+    box-shadow: 1px 1px 15px #d5d5d55c;
+    transition: all 250ms ease-in-out;
+}
+.destinition__view-all-btn{
+    background-color: transparent;
+    border: 1px solid #E76F51;
+    color: #E76F51;
+    margin-top: 60px;
+}
+.destinition__view-all-btn:hover{
+    background-color: #E76F51;
+    color: #F8E1DB;
+    transition: all 250ms ease-in-out;
+}
+/*
+=================================================
+==============   Travel planning   ==============
+=================================================
+*/
+.travel-planning{
+    margin-top: 100px;
+    background-color: #F8E1DB;
+    border-radius: 24px;
+    margin-bottom: 150px;
+    box-shadow: 1px 1px 15px #d5d5d55f;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.travel-planning__left__title{
+    font-family: Archivo_Black;
+    font-size: 30px;
+    color: #3B3735;
+    min-width: 183px;
+    margin-bottom: 20px;
+}
+.travel-planning__left__text{
+    color: #3B3735;
+    margin-bottom: 20px;
+
+}
+.travel-planning__input-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 40px;
+
+}
+.travel-planning__email-icon{
+    position: absolute;
+    left: 20px;
+    fill: #8D8D8D;
+}
+.travel-planning__input{
+    width: 100%;
+    height: 100%;
+    padding-left: 53px;
+    border: none;
+    color: #8D8D8D;
+    font-size: 16px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #a9a9a94e;
+}
+
+.travel-planning__submit{
+    background-color: #E76F51;
+    border: none;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    box-shadow: 0.1px 0.1px 15px #e76f519c;
+
+}
+.travel-planning__img{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+/*
+=================================================
+==================   Footer   ===================
+=================================================
+*/
+.footer{
+    background-color: #F8E1DB;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+.footer__section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: baseline;
+}
+.footer__left-flex{
+    margin-right: 80px;
+}
+.footer__left-text{
+    margin-top: 100px;
+}
+.footer__title{
+    color: #3B3735;
+    font-family: Archivo_Black;
+    margin-bottom: 15px;
+}
+.footer__text{
+    line-height: 2.4rem;
+    color: #3B3735;
+    margin-bottom: 30px;
+}
+.footer__download-app{
+    display: none;
+}
+.footer__download-app__title{
+    margin-bottom: 20px;
+    color: #3B3735;
+    font-family: Archivo_Black;
+}
+.footer__download-app__icon{
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.footer__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer__download-app--mobile{
+    display: block;
+}
+.footer-menu__know-us{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style-type: none;
+    gap: 3px;
+}
+.footer-menu__about-title{
+    font-family: Archivo_Black;
+    color: #3B3735;
+}
+.footer-menu__about__tag-a{
+    font-family: Roboto_Regular;
+    margin-top: 7px;
+    color: #3B3735;
+}
+.footer-menu__plan-us{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style-type: none;
+    gap: 3px;
+}
+.footer-menu__help-you{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style-type: none;
+    gap: 3px;
+}
+.footer__arrow-top-icon{
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 20px;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    box-shadow: 1px 1px 15px #d5d5d55f;
+    display: block;
+}
+.all__right__reserved{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+    cursor: default;
+}
+/*
+=================================================
+==============   Responsive(media)   ============
+=================================================
+*/
+@media (min-width : 320px){
+    .nav__left{
+        display: none;
+    }
+    .header__title{
+        font-size: 32px;
+    }
+    .header__text{
+        font-size: 14px;
+    }
+    .btn{
+        width: 140px;
+    }
+    .destination__text{
+        font-size: 30px;
+    }
+    .footer__arrow-top-icon{
+        right: 42%;
+    }
+    .travel-planning__left__title{
+        font-size: 22px;
+    }
+    .travel-planning__input{
+        font-size: 12px;
+    }
+}
+@media (min-width : 576px){
+    .header__title{
+        font-size: 44px;
+    }
+    .header__text{
+        font-size: 15px;
+    }
+    .btn{
+        width: 170px;
+    }
+    .destination__text{
+        font-size: 40px;
+    }
+    .travel-planning__input{
+        font-size: 14px;
+    }
+}
+@media (min-width : 768px){
+    .header__title{
+        font-size: 50px;
+    }
+    .header__text{
+        font-size: 16px;
+        max-width: 450px;
+    }
+    .travel-planning{
+        flex-direction: row;
+        text-align: left;
+        padding: 30px 20px 0 30px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .travel-planning__left{
+        width: 55%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .travel-planning__left__title{
+        margin-bottom: 2px;
+        font-size: 28px;
+    }
+    .travel-planning__left__text{
+        margin-bottom: 25px;
+    }
+    .travel-planning__input{
+        font-size: 16px;
+    }
+    .travel-planning__input-wrapper{
+        width: 95%;
+    }
+    .travel-planning__banner{
+        width: 50%;
+        padding-left: 30px;
+    }
+    .travel-planning__img{
+        margin-top: 0;
+    }
+}
+@media (min-width : 992px){
+    .travel-planning__left{
+        padding-right: 20px;
+    }
+    .footer__section{
+        flex-direction: row;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+    }
+    .footer__wrapper{
+        flex-wrap: nowrap;
+    }
+    .footer__left-flex{
+        width: 55%;
+    }
+    .footer-menu__about-title{
+        margin-bottom: 15px;
+    }
+    .footer__arrow-top-icon{
+        right: 0;
+    }
+    .footer__download-app{
+        display: block;
+    }
+    .footer__download-app--mobile{
+        display: none;
+    }
+
+}
+@media (min-width : 1100px){
+    .nav__mobile-btn, .nav__mobile{
+        display: none;
+    }
+    .nav__left{
+        display: flex;
+    }
+    .nav__right{
+        display: block;
+    }
+    .header{
+        min-height: 115vh;
+    }
+    .header__caption{
+        margin-top: 125px;
+    }
+    .header__title{
+        font-size: 66px;
+    }
+    .travel-planning__left{
+        padding-right: 40px;
+        margin: 40px;
+    }
+    .travel-planning__banner{
+        margin-right: 40px;
+    }
+    .footer-menu{
+        width: 100%;
+    }
+    .footer__left-flex{
+    }
+}
+@media (min-width : 1400px){
+    .travel-planning__banner{
+        padding-left: 180px;
+    }
+    .travel-planning__input-wrapper{
+        width: 100%;
+    }
+}
